@@ -1,0 +1,61 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.poetry]
+name = "dyhwit"
+description = "NONE"
+readme = "README.md"
+authors = ["Smart Analytics Toolbox"]
+# # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
+classifiers = [
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Private :: Do Not Upload",
+]
+version =  "0.0.1"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+gitpython = "^3.1.29"
+typer = {version = "^0.7.0", extras = ["all"]}
+charset-normalizer = "^3.0.1"
+
+[tool.poetry.group.dev.dependencies]
+autoflake = "^2.0.0"
+black = "^22.12.0"
+coverage = "^7.0.1"
+flake8 = "^6.0.0"
+isort = "^5.11.4"
+mypy = "^0.991"
+pre-commit = "^2.21.0"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+toml = "^0.10.2"
+tox = "3.27.1"
+pep8-naming = "^0.13.3"
+
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = 7.0
+addopts = "-ra -v --cov --cov-report term-missing"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[[tool.poetry.source]]
+name = "nexus-pypi"
+url = "https://nexus.rz.bankenit.de/repository/pypi-internet-proxy/simple/"
+default = true
+
+[[tool.poetry.source]]
+name = "kundenfokus-pypi"
+url = "https://nexus.rz.bankenit.de/repository/kundenfokus-pypi-hosted/simple/"
+default = false
+secondary = true
+
+[tool.poetry.scripts]
+dyhwit = "dyhwit.cli_runner:run_cli"

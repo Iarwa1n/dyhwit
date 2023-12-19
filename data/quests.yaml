@@ -1,0 +1,17 @@
+quests
+  - name: "The First Quest"
+    tags: 
+      - python
+      - programming
+    description: "This is the first quest"
+    objectives:
+      - name: "Objective 1"
+        description: "This is the first objective"
+        type: "kill"
+        target: "goblin"
+        amount: 5
+      - name: "Objective 2"
+        description: "This is the second objective"
+        type: "collect"
+        target: "gold"
+        amount: 10  

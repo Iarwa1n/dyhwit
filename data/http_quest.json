@@ -1,0 +1,22 @@
+[
+    {
+        "task": "Which is not a valid http status code",
+        "choices": [
+            "400",
+            "500",
+            "666",
+            "205"
+        ],
+        "correct_choice": "666"
+    },
+    {
+        "task": "Which status codes are meant for client errors",
+        "choices": [
+            "100-199",
+            "4xx",
+            "6xx",
+            "5xx"
+        ],
+        "correct_choice": "4xx"
+    }
+]
